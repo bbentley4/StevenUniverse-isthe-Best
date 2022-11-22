@@ -35,7 +35,7 @@
         font-family:Verdana, Geneva, Tahoma, sans-serif;
         text-align: center;
         margin: 20px 0px;
-        -webkit-text-stroke-color: #8ef6e4;
+        -webkit-text-stroke-color: #9896f1;
         -webkit-text-stroke-width: 2px;
         color: white; 
         font-size: 40px;
@@ -64,6 +64,12 @@
         transition: all 200ms ease;
         text-decoration: none;
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    a:hover {
+        transition: all 200ms ease;
+        opacity: 0.2;
+        color: white;
     }
 
     img {
@@ -96,7 +102,14 @@
         color: white;
         margin: 40px 0px;
         text-align: center;
-}
+    }
+
+    button:hover {
+        border: 1px inset #edb1f1;
+        background: white;
+        color: #9896f1;
+        transition: all 200ms ease;
+    }
 
     .centerImage {
         display: block;
@@ -111,10 +124,12 @@
         margin: 10px 5px;
     }
 
-    .charNames {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        line-height: 1;
+    .price {
+        color: green;
+        text-decoration: underline;
+        font-size: 24px;
     }
+
 
 
   </style>
@@ -217,17 +232,31 @@
         </tr>
     </table>
 
+    <hr>
     <br>
+
+    <p>
+        Watch it now on Hulu for only <span class="price"><em>$6.99</em></span> a month!
+    </p>
 
     <button>Watch Steven Universe</button>
 
   </body>
   </div>
   <script>
-    function watchSU {
-        
+    function watchSU() {
+        let age = prompt("How old are you?")
+        if (age < 18)
+        {
+            alert("Sorry kiddo, you'll need to grab a parent to subscribe to Hulu.")
+        }
+        else
+        {
+            location.href = "https://www.hulu.com/series/steven-universe-73e1e605-f760-470c-9a58-0148abe73270";
+        }
     }
-    let element = document.querySelector("#button");
-    element.addEventListener("click, watchSU");
+
+    let buttonClick = document.querySelector("button");
+    buttonClick.addEventListener("click", watchSU);
   </script>
 </html>
